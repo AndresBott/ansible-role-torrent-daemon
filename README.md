@@ -1,3 +1,3 @@
 # ansible-role-torrent-daemon
 
-Ansible role to install Transmission torrent daemin
+Ansible role to install Transmission torrent daemon

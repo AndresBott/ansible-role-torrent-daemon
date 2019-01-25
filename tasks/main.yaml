@@ -1,0 +1,32 @@
+---
+#============================================================================================================
+# PHP-FPM
+# @author: Andres Bott <contact@andresbott.com>
+# @description: Ansible role to install Transmission torrent daemon
+#============================================================================================================
+
+# @action: install # Install and configure transmission daemon
+- name: Main torrent block
+  when:
+    - run_role_torrent_daemon
+  tags:           ['role_torrent_daemon',"untagged"]
+  block:
+
+  - name: Install Transmisision
+    apt:
+      name:
+        - transmission-daemon
+      state: latest
+      update_cache: yes
+    notify: restart transmission-daemon
+
+  - name: Stop transmission-daemon for configurations
+    service:
+      name: "transmission-daemon"
+      state: "stopped"
+
+  - name: Configure Transmisision
+    template:
+      src: settings.json.j2
+      dest: /etc/transmission-daemon/settings.json
+    notify: restart transmissiondaemon
