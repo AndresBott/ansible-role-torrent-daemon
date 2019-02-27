@@ -1,3 +1,14 @@
-# ansible-role-torrent-daemon
+# Ansible Role: Torrent-daemon
 
-Ansible role to install Transmission torrent daemon
+
+## Actions:
+
+## Role Tags:
+
+* `role_torrent_daemon` - 
+
+## Role Variables:
+## TODOs
+
+
+
