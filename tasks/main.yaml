@@ -1,12 +1,13 @@
 ---
 #============================================================================================================
 # PHP-FPM
-# @author: Andres Bott <contact@andresbott.com>
-# @description: Ansible role to install Transmission torrent daemon
+# @mtea author: Andres Bott <contact@andresbott.com>
+# @meta description: Ansible role to install Transmission torrent daemon
+#
 #============================================================================================================
-# @tag:  role_torrent_daemon # Only run the role Torrent daemon
+# @tag  role_torrent_daemon # Only run the role Torrent daemon
 
-# @action: install # Install and configure transmission daemon
+# @action # Install and configure transmission daemon
 - name: Main torrent block
   when:
     - run_role_torrent_daemon
